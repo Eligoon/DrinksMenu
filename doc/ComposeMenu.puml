@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+
+'Create a list for composing an age appropriate menu
+DrinksMenu -> ArrayList:options = new ArrayList()
+
+alt (age < 18)
+'DrinksMenu giver options til ArrayList som skriver "Milk" på plads 0
+DrinksMenu -> ArrayList:add("Milk")
+else (false)
+DrinksMenu -> ArrayList:add("Beer")
+end
+
+@enduml
