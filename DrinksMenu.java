@@ -4,16 +4,16 @@ import java.util.Scanner;
 class DrinksMenu{
 	
 
-  public static void main(String[] args){
+  public static void main(String[] args) {
 
-    
-    Scanner scan = new Scanner(System.in);
-      
-      
-    System.out.println("Hvor gammel er du?");//Stille brugeren et spørgsmål
+
+      Scanner scan = new Scanner(System.in);
+
+
+      System.out.println("Hvor gammel er du?");//Stille brugeren et spørgsmål
       // TODO: Reducer dette til én linje ved at anvende TextUI metoden getNumericInput() i stedet for
-    String input = scan.nextLine();          //Give brugere et sted at placere sit svar og vente på svaret
-    int age = Integer.parseInt(input);       //Konvertere svaret til et tal
+      String input = scan.nextLine();          //Give brugere et sted at placere sit svar og vente på svaret
+      int age = Integer.parseInt(input);       //Konvertere svaret til et tal
 
 
     /*
@@ -22,37 +22,36 @@ class DrinksMenu{
     */
 
 
-    ArrayList<String> options = new ArrayList<String>(); 
+      ArrayList<String> options = new ArrayList<String>();
 
-      if(age >= 18){
-        options.add("Gin&Tonic");
-  		  options.add("Martini");
-  		  options.add("Gin&Hass");
-  		
-      }else{
-         options.add("Milk");
-         options.add("Juice");
-         options.add("Saftevand");
-         	
+      if (age >= 18) {
+          options.add("Gin&Tonic");
+          options.add("Martini");
+          options.add("Gin&Hass");
+
+      } else {
+          options.add("Milk");
+          options.add("Juice");
+          options.add("Saftevand");
+
       }
-      	options.add("vand");
+      options.add("vand");
       
 
       /* 
       Vi viser listen til brugeren
       */
 
-   //TODO: Reducer dette til en linje ved at anvende TextUI metoden displayList() i stedet for
-      for(String option: options){
-      System.out.println(option);
-    }
+      //TODO: Reducer dette til en linje ved at anvende TextUI metoden displayList() i stedet for
+      for (String option : options) {
+          System.out.println(option);
+      }
 
   
     /*
     Vi spørger om antal af drinks, så vi ved mange gange vi skal prompte i while loopet længere nede. 
     Hvert valg placerer vi i en liste, så vi kan udskrive bestillingen tilsidst.
     */
-
 
 
       // int numberOfDrinks = scan.nextInt();
@@ -72,7 +71,6 @@ class DrinksMenu{
         //TODO: Reducer dette til en linje ved at anvende TextUI metoden getChoice(options) i stedet for
         System.out.println("Vælg en drink fra listen: ");
        	String choice = scan.nextLine();
-
 
        	choices.add(choice);
    		}
