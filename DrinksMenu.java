@@ -11,15 +11,17 @@ class DrinksMenu{
       
       
     System.out.println("Hvor gammel er du?");//Stille brugeren et spørgsmål
+      // TODO: Reducer dette til én linje ved at anvende TextUI metoden getNumericInput() i stedet for
     String input = scan.nextLine();          //Give brugere et sted at placere sit svar og vente på svaret
     int age = Integer.parseInt(input);       //Konvertere svaret til et tal
-     
+
 
     /*
     Vi vil nu sammensætte en drinksmenu der afhænger af brugerens alder
     Vi placerer valgmulighederne i en liste - så kan den genbruges et andet sted i systemet.
     */
-   
+
+
     ArrayList<String> options = new ArrayList<String>(); 
 
       if(age >= 18){
@@ -40,8 +42,8 @@ class DrinksMenu{
       Vi viser listen til brugeren
       */
 
-
-    for(String option: options){
+   //TODO: Reducer dette til en linje ved at anvende TextUI metoden displayList() i stedet for
+      for(String option: options){
       System.out.println(option);
     }
 
@@ -66,8 +68,11 @@ class DrinksMenu{
     
 
       while(choices.size() < numberOfDrinks){             //tjekke om brugeren skal vælge flere drinks
-        System.out.println("Vælg en drink fra listen: "); 
-       	String choice = scan.nextLine();  
+        //TODO: Reducer dette til en linje ved at anvende TextUI metoden getChoice(options) i stedet for
+        System.out.println("Vælg en drink fra listen: ");
+       	String choice = scan.nextLine();
+
+
        	choices.add(choice);
    		}
 
@@ -76,6 +81,7 @@ class DrinksMenu{
       /* 
       Vi viser listen til brugeren
       */
+      //TODO: Genbrug TextUI metoden displayList(choices) i stedet for
    	  System.out.println("Du har bestilt flg.: ");    
       for(String choice: choices){
       System.out.println(choice);
