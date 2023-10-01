@@ -12,9 +12,9 @@ class TextUI {
 + void displayMenu(ArrayList<String> list, String msg)
 }
 
-class Main {
+class DrinksMenu {
 - static TextUI ui
 + static void main(String[] args)
 }
-Main *-- TextUI: has
+DrinksMenu *-- TextUI: has
 @enduml
