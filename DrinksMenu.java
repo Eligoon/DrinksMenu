@@ -61,6 +61,7 @@ class DrinksMenu{
       // fix this by simply calling nextLine() once before you actually need it
       // Another fix: read it as string, then parse it
 
+      //TODO: anvend TextUI's getNumericInput metoden istedet for denne linje
       int numberOfDrinks = Integer.parseInt(scan.nextLine());    //Give brugere et sted at placere sit svar og vente på svaret
 
 
