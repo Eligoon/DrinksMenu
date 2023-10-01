@@ -53,15 +53,15 @@ class DrinksMenu{
     Hvert valg placerer vi i en liste, så vi kan udskrive bestillingen tilsidst.
     */
 
-      System.out.println("Hvor mange drinks vil du bestille?");//Stille brugeren et spørgsmål
-      
+
 
       // int numberOfDrinks = scan.nextInt();
       // This is ok, but BEWARE OF THE SCANNERBU: When using nextInt() right before nextLine(): the nextLine call will be skipped...           
       // fix this by simply calling nextLine() once before you actually need it
       // Another fix: read it as string, then parse it
 
-      //TODO: anvend TextUI's getNumericInput metoden istedet for denne linje
+      //TODO: anvend TextUI's getNumericInput metode, i stedet for disse to linjer
+      System.out.println("Hvor mange drinks vil du bestille?");  //Stille brugeren et spørgsmål
       int numberOfDrinks = Integer.parseInt(scan.nextLine());    //Give brugere et sted at placere sit svar og vente på svaret
 
 
