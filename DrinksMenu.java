@@ -1,19 +1,20 @@
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 class DrinksMenu{
-	
+	static private TextUI ui;
 
   public static void main(String[] args) {
 
 
-      Scanner scan = new Scanner(System.in);
 
+       ui = new TextUI();
 
-      System.out.println("Hvor gammel er du?");//Stille brugeren et spørgsmål
-      // TODO: Reducer dette til én linje ved at anvende TextUI metoden getNumericInput() i stedet for
-      String input = scan.nextLine();          //Give brugere et sted at placere sit svar og vente på svaret
-      int age = Integer.parseInt(input);       //Konvertere svaret til et tal
+       String myquestion = "Hvor gammel er du?";
+       int age = ui.getNumericInput("Hvor gammel er du?");
+
 
 
     /*
@@ -42,37 +43,29 @@ class DrinksMenu{
       Vi viser listen til brugeren
       */
 
-      //TODO: Reducer dette til en linje ved at anvende TextUI metoden displayList() i stedet for
-      for (String option : options) {
-          System.out.println(option);
-      }
+      ui.diplayMenu(options);
+
+
 
   
-    /*
-    Vi spørger om antal af drinks, så vi ved mange gange vi skal prompte i while loopet længere nede. 
-    Hvert valg placerer vi i en liste, så vi kan udskrive bestillingen tilsidst.
-    */
+      /*
+      Vi spørger om antal af drinks, så vi ved mange gange vi skal prompte i while loopet længere nede.
+      Hvert valg placerer vi i en liste, så vi kan udskrive bestillingen tilsidst.
+      */
 
-
-      // int numberOfDrinks = scan.nextInt();
-      // This is ok, but BEWARE OF THE SCANNERBU: When using nextInt() right before nextLine(): the nextLine call will be skipped...           
-      // fix this by simply calling nextLine() once before you actually need it
-      // Another fix: read it as string, then parse it
 
       //TODO: anvend TextUI's getNumericInput metode, i stedet for disse to linjer
-      System.out.println("Hvor mange drinks vil du bestille?");  //Stille brugeren et spørgsmål
-      int numberOfDrinks = Integer.parseInt(scan.nextLine());    //Give brugere et sted at placere sit svar og vente på svaret
 
+     int numberOfDrinks = ui.getNumericInput("Hvor mange drinks vil du bestille?");
 
       ArrayList<String> choices = new ArrayList<String>();  //Lave en beholder til at gemme brugerens valg
     
 
       while(choices.size() < numberOfDrinks){             //tjekke om brugeren skal vælge flere drinks
         //TODO: Reducer dette til en linje ved at anvende TextUI metoden getChoice(options) i stedet for
-        System.out.println("Vælg en drink fra listen: ");
-       	String choice = scan.nextLine();
 
-       	choices.add(choice);
+         String choice =  ui.getChoice(options, "Vælg en drink fra listen: " );
+       	   choices.add(choice);
    		}
 
 

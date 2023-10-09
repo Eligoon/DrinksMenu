@@ -17,4 +17,4 @@ class DrinksMenu {
 + static void main(String[] args)
 }
 DrinksMenu *-- TextUI: has
-@enduml
+@endumluml
