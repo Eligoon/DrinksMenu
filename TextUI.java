@@ -6,8 +6,8 @@ public class TextUI {
 
     //shows a message and returns the user's input as a String
     public String getInput(String msg){
-
-        return "";
+        System.out.println(msg);
+        return scan.nextLine();
     }
 
     public int getNumericInput(String msg){
@@ -19,7 +19,15 @@ public class TextUI {
         // Another fix: read it as string, then parse it:
 
         String input = scan.nextLine();          //Give brugere et sted at placere sit svar og vente på svaret
-        int num = Integer.parseInt(input);       //Konvertere svaret til et tal
+        int num = 0;
+        try {
+            num = Integer.parseInt(input);       //Konvertere svaret til et tal
+
+        }catch (NumberFormatException e){
+            System.out.println("This was not a number, "+e.getMessage());
+            num = getNumericInput(msg);
+
+        }
         return num;
 
     }
@@ -31,6 +39,12 @@ public class TextUI {
         System.out.println(msg);
       //  diplayMenu(options);
         String input = getInput("");
+
+        //tjek om input findes i listen, hvis ikke, smid en exception
+       if(!options.contains(input)){
+           System.out.println("findes ikke på listen");
+           input = getChoice(options, msg);
+       }
 
         return input;
     }
