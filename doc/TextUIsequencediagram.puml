@@ -1,25 +1,7 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 
-
-
-DrinksMenu -> TextUI: ui = new TextUI()
-DrinksMenu -> TextUI: age = getNumericInput("How old are you?")
-TextUI -> Scanner: input = nextInt()
-Scanner --> TextUI: 11
-TextUI --> DrinksMenu: 11
-
-'Create a list for composing an age appropriate menu
-DrinksMenu -> ArrayList:options = new ArrayList()
-
-alt (age < 18)
-'DrinksMenu giver options til ArrayList som skriver "Milk" på plads 0
-DrinksMenu -> ArrayList:add("Milk")
-else (false)
-DrinksMenu -> ArrayList:add("Beer")
-end
-
-DrinksMenu -> TextUI: numOrders = getNumericInput("How many drinks would you like to order?")
+DrinksMenu -> TextUI: numOrders = promptNumeric("How many drinks would you like to order?")
 TextUI --> DrinksMenu: 3
 
 'Create a list for the user's choices (could have been a String array with 3 indexes)
@@ -28,7 +10,7 @@ DrinksMenu -> ArrayList:choices = new ArrayList()
 loop (numOrders)
 DrinksMenu -> TextUI: choice = getChoice(options,"Choose from the list:")
 TextUI -> TextUI: displayList(options,"Choose from the list:")
-TextUI -> TextUI: getInput("")
+TextUI -> TextUI: promptText("")
 TextUI -> Scanner: input = nextLine()
 Scanner --> TextUI: "Milk"
 TextUI --> DrinksMenu: "Milk"
