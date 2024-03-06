@@ -9,7 +9,7 @@ class TextUI {
 ' shows a message, lists the content of a list and returns the user's choice
 + String promptChoice(ArrayList<String> choices)
 ' shows a message and lists the content of a list
-+ void displayMenu(ArrayList<String> list, String msg)
++ void displayList(ArrayList<String> list, String msg)
 }
 
 class DrinksMenu {
