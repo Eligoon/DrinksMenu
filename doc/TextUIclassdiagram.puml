@@ -3,9 +3,9 @@
 class TextUI {
 - Scanner scan
 ' shows a message and returns the user's input as a String
-+ String getInput(String msg)
++ String promptText(String msg)
 ' shows a message and returns the user's input as an integer
-+ int getNumericInput(String msg)
++ int promptNumeric(String msg)
 ' shows a message, lists the content of a list and returns the user's choice
 + String getChoice(ArrayList<String> choices)
 ' shows a message and lists the content of a list
