@@ -67,11 +67,10 @@ class DrinksMenu{
       ArrayList<String> choices = new ArrayList<String>();  //Lave en beholder til at gemme brugerens valg
     
 
-      while(choices.size() < numberOfDrinks){             //tjekke om brugeren skal vælge flere drinks
+        while(choices.size() < numberOfDrinks){             //tjekke om brugeren skal vælge flere drinks
         //TODO: Reducer dette til en linje ved at anvende TextUI metoden promptChoice(options) i stedet for
         System.out.println("Vælg en drink fra listen: ");
        	String choice = scan.nextLine();
-
        	choices.add(choice);
    		}
 
