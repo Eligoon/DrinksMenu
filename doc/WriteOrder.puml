@@ -1,14 +1,14 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 
-DrinksMenu -> TextUI: numOrders = getNumericInput("How many drinks would you like to order?")
+DrinksMenu -> TextUI: numOrders = promptNumeric("How many drinks would you like to order?")
 TextUI --> DrinksMenu: 3
 
 'Create a list for the user's choices (could have been a String array with 3 indexes)
 DrinksMenu -> ArrayList:choices = new ArrayList()
 
 loop (numOrders)
-DrinksMenu -> TextUI: choice = getChoice(options,"Choose from the list:")
+DrinksMenu -> TextUI: choice = promptChoice(options,"Choose from the list:")
 TextUI -> TextUI: displayList(options,"Choose from the list:")
 TextUI -> TextUI: getInput("")
 TextUI -> Scanner: input = nextLine()

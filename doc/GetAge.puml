@@ -4,7 +4,7 @@
 
 
 DrinksMenu -> TextUI: ui = new TextUI()
-DrinksMenu -> TextUI: age = getNumericInput("How old are you?")
+DrinksMenu -> TextUI: age = promptNumeric("How old are you?")
 TextUI -> Scanner: input = nextInt()
 Scanner --> TextUI: 11
 TextUI --> DrinksMenu: 11
