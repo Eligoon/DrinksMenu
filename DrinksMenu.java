@@ -11,7 +11,7 @@ class DrinksMenu{
 
 
       System.out.println("Hvor gammel er du?");//Stille brugeren et spørgsmål
-
+      // TODO: Reducer dette til én linje ved at anvende TextUI metoden promptNumeric() i stedet for
       String input = scan.nextLine();          //Give brugere et sted at placere sit svar og vente på svaret
       int age = Integer.parseInt(input);       //Konvertere svaret til et tal
 
@@ -41,31 +41,38 @@ class DrinksMenu{
       /* 
       Vi viser listen til brugeren
       */
+
+      //TODO: Reducer dette til en linje ved at anvende TextUI metoden displayList() i stedet for
       for (String option : options) {
           System.out.println(option);
       }
 
-     /*
-     Vi spørger om antal af drinks, så vi ved hvor mange gange vi skal prompte i while loopet længere nede.
-     */
+  
+    /*
+    Vi spørger om antal af drinks, så vi ved mange gange vi skal prompte i while loopet længere nede. 
+    Hvert valg placerer vi i en liste, så vi kan udskrive bestillingen tilsidst.
+    */
+
+
+      // int numberOfDrinks = scan.nextInt();
+      // This is ok, but BEWARE OF THE SCANNERBU: When using nextInt() right before nextLine(): the nextLine call will be skipped...           
+      // fix this by simply calling nextLine() once before you actually need it
+      // Another fix: read it as string, then parse it
+
+      //TODO: anvend TextUI's promptNumeric metode, i stedet for disse to linjer
       System.out.println("Hvor mange drinks vil du bestille?");  //Stille brugeren et spørgsmål
       int numberOfDrinks = Integer.parseInt(scan.nextLine());    //Give brugere et sted at placere sit svar og vente på svaret
-      // Alternative:
-      // int numberOfDrinks = scan.nextInt();
-      /* ...the above is ok, but BEWARE OF THE SCANNERBU: When using nextInt() right before nextLine(): the nextLine call will be skipped...
-       fix this by simply calling nextLine() once before you actually need it
-       Another fix: read it as string, then parse it*/
 
-      /* Vi laver en beholder til at gemme brugerens valg, som han foretager nede i while loopet*/
-      ArrayList<String> choices = new ArrayList<String>();
+
+      ArrayList<String> choices = new ArrayList<String>();  //Lave en beholder til at gemme brugerens valg
     
-      /* Vi tjekker om brugeren skal vælge flere drinks*/
-      while(choices.size() < numberOfDrinks){
 
+        while(choices.size() < numberOfDrinks){             //tjekke om brugeren skal vælge flere drinks
+        //TODO: Reducer to linjer til en linje ved at anvende TextUI metoden promptChoice(options) i stedet for
         System.out.println("Vælg en drink fra listen: ");
        	String choice = scan.nextLine();
-        /*  Hvert valg placerer vi i en liste, så vi kan udskrive bestillingen til sidst.*/
-       	choices.add(choice);
+
+        choices.add(choice);
    		}
 
 
@@ -73,7 +80,7 @@ class DrinksMenu{
       /* 
       Vi viser listen til brugeren
       */
-
+      //TODO: Genbrug TextUI metoden displayList(choices) i stedet for
    	  System.out.println("Du har bestilt flg.: ");    
       for(String choice: choices){
       System.out.println(choice);
