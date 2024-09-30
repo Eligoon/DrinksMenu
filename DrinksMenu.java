@@ -9,11 +9,12 @@ class DrinksMenu{
 
       Scanner scan = new Scanner(System.in);
 
+   /*
+   Vi beder om brugerens alder
+   */
 
-      System.out.println("Hvor gammel er du?");//Stille brugeren et spørgsmål
       // TODO 1: Reducer dette til én linje ved at anvende TextUI metoden promptNumeric() i stedet for
-
-
+      System.out.println("Hvor gammel er du?");//Stille brugeren et spørgsmål
       String input = scan.nextLine();          //Give brugere et sted at placere sit svar og vente på svaret
       int age = Integer.parseInt(input);       //Konvertere svaret til et tal
 
@@ -40,9 +41,9 @@ class DrinksMenu{
       options.add("vand");
 
 
-      /*
-      Vi viser listen til brugeren
-      */
+    /*
+     Vi viser listen til brugeren
+     */
 
       //TODO 2: Reducer dette til en linje ved at anvende TextUI metoden displayList() i stedet for
       for (String option : options) {
@@ -55,38 +56,29 @@ class DrinksMenu{
     Hvert valg placerer vi i en liste, så vi kan udskrive bestillingen tilsidst.
     */
 
-
-      // int numberOfDrinks = scan.nextInt();
-      // This is ok, but BEWARE OF THE SCANNERBU: When using nextInt() right before nextLine(): the nextLine call will be skipped...
-      // fix this by simply calling nextLine() once before you actually need it
-      // Another fix: read it as string, then parse it
-
       // TODO 3: anvend TextUI's promptNumeric metode, i stedet for disse to linjer
       System.out.println("Hvor mange drinks vil du bestille?");  //Stille brugeren et spørgsmål
       int numberOfDrinks = Integer.parseInt(scan.nextLine());    //Give brugere et sted at placere sit svar og vente på svaret
 
 
+      //TODO 4: Reducer 6 linjer til 1 linje ved at anvende TextUI metoden promptChoice() i stedet for
       ArrayList<String> choices = new ArrayList<String>();  //Lave en beholder til at gemme brugerens valg
-
-
         while(choices.size() < numberOfDrinks){             //tjekke om brugeren skal vælge flere drinks
-        //TODO 4: Reducer to linjer til en linje ved at anvende TextUI metoden promptChoice(options) i stedet for
-        System.out.println("Vælg en drink fra listen: ");
-       	String choice = scan.nextLine();
-
-        choices.add(choice);
+            System.out.println("Vælg en drink fra listen: ");
+       	    String choice = scan.nextLine();
+            choices.add(choice);
    		}
 
 
 
       /*
-      Vi viser listen til brugeren
+      Vi viser brugerens bestilling
       */
       //TODO 5: Genbrug TextUI metoden displayList(choices) i stedet for
    	  System.out.println("Du har bestilt flg.: ");
       for(String choice: choices){
-      System.out.println(choice);
-    }
+        System.out.println(choice);
+      }
 
 
 

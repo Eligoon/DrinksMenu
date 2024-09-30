@@ -7,7 +7,7 @@ class TextUI {
 ' shows a message and returns the user's input as an integer
 + int promptNumeric(String msg)
 ' shows the options, promts for choices until limit is reached, and returns the user's choices as a list
-+ ArrayList<String> String promptChoice(ArrayList<String> choices, int limit, String msg)
++ ArrayList<String> promptChoice(ArrayList<String> choices, int limit, String msg)
 ' shows a message and lists the content of a list
 + void displayList(ArrayList<String> list, String msg)
 }
