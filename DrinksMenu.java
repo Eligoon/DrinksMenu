@@ -11,7 +11,7 @@ class DrinksMenu{
 
 
       System.out.println("Hvor gammel er du?");//Stille brugeren et spørgsmål
-      // TODO: Reducer dette til én linje ved at anvende TextUI metoden promptNumeric() i stedet for
+      // TODO 1: Reducer dette til én linje ved at anvende TextUI metoden promptNumeric() i stedet for
 
 
       String input = scan.nextLine();          //Give brugere et sted at placere sit svar og vente på svaret
@@ -44,7 +44,7 @@ class DrinksMenu{
       Vi viser listen til brugeren
       */
 
-      //TODO: Reducer dette til en linje ved at anvende TextUI metoden displayList() i stedet for
+      //TODO 2: Reducer dette til en linje ved at anvende TextUI metoden displayList() i stedet for
       for (String option : options) {
           System.out.println(option);
       }
@@ -61,7 +61,7 @@ class DrinksMenu{
       // fix this by simply calling nextLine() once before you actually need it
       // Another fix: read it as string, then parse it
 
-      // TODO: anvend TextUI's promptNumeric metode, i stedet for disse to linjer
+      // TODO 3: anvend TextUI's promptNumeric metode, i stedet for disse to linjer
       System.out.println("Hvor mange drinks vil du bestille?");  //Stille brugeren et spørgsmål
       int numberOfDrinks = Integer.parseInt(scan.nextLine());    //Give brugere et sted at placere sit svar og vente på svaret
 
@@ -70,7 +70,7 @@ class DrinksMenu{
 
 
         while(choices.size() < numberOfDrinks){             //tjekke om brugeren skal vælge flere drinks
-        //TODO: Reducer to linjer til en linje ved at anvende TextUI metoden promptChoice(options) i stedet for
+        //TODO 4: Reducer to linjer til en linje ved at anvende TextUI metoden promptChoice(options) i stedet for
         System.out.println("Vælg en drink fra listen: ");
        	String choice = scan.nextLine();
 
@@ -82,7 +82,7 @@ class DrinksMenu{
       /*
       Vi viser listen til brugeren
       */
-      //TODO: Genbrug TextUI metoden displayList(choices) i stedet for
+      //TODO 5: Genbrug TextUI metoden displayList(choices) i stedet for
    	  System.out.println("Du har bestilt flg.: ");
       for(String choice: choices){
       System.out.println(choice);
