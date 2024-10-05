@@ -1,3 +1,5 @@
+package src;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -6,14 +8,14 @@ class DrinksMenu{
 
   public static void main(String[] args) {
 
-
+      // TODO 1: Skriv en TextUI klasse og tilføj en instans af TextUI her, som til sidst skal erstatte direkte brug af Scanner objeketet i denne klasse.
       Scanner scan = new Scanner(System.in);
 
    /*
    Vi beder om brugerens alder
    */
 
-      // TODO 1: Reducer dette til én linje ved at anvende TextUI metoden promptNumeric() i stedet for
+      // TODO 2: Reducer dette til én linje ved at anvende TextUI metoden promptNumeric() i stedet for
       System.out.println("Hvor gammel er du?");//Stille brugeren et spørgsmål
       String input = scan.nextLine();          //Give brugere et sted at placere sit svar og vente på svaret
       int age = Integer.parseInt(input);       //Konvertere svaret til et tal
@@ -45,10 +47,11 @@ class DrinksMenu{
      Vi viser listen til brugeren
      */
 
-      //TODO 2: Reducer dette til en linje ved at anvende TextUI metoden displayList() i stedet for
+      //TODO 3: Reducer dette til en linje ved at anvende TextUI metoden displayList() i stedet for
       for (String option : options) {
           System.out.println(option);
       }
+
 
 
     /*
@@ -56,12 +59,12 @@ class DrinksMenu{
     Hvert valg placerer vi i en liste, så vi kan udskrive bestillingen tilsidst.
     */
 
-      // TODO 3: anvend TextUI's promptNumeric metode, i stedet for disse to linjer
+      // TODO 4: anvend TextUI's promptNumeric metode, i stedet for disse to linjer
       System.out.println("Hvor mange drinks vil du bestille?");  //Stille brugeren et spørgsmål
       int numberOfDrinks = Integer.parseInt(scan.nextLine());    //Give brugere et sted at placere sit svar og vente på svaret
 
 
-      //TODO 4: Reducer 6 linjer til 1 linje ved at anvende TextUI metoden promptChoice() i stedet for
+      //TODO 5: Reducer 6 linjer til 1 linje ved at anvende TextUI metoden promptChoice() i stedet for
       ArrayList<String> choices = new ArrayList<String>();  //Lave en beholder til at gemme brugerens valg
         while(choices.size() < numberOfDrinks){             //tjekke om brugeren skal vælge flere drinks
             System.out.println("Vælg en drink fra listen: ");
@@ -74,7 +77,7 @@ class DrinksMenu{
       /*
       Vi viser brugerens bestilling
       */
-      //TODO 5: Genbrug TextUI metoden displayList(choices) i stedet for
+      //TODO 6: Genbrug TextUI metoden displayList(choices) i stedet for
    	  System.out.println("Du har bestilt flg.: ");
       for(String choice: choices){
         System.out.println(choice);
