@@ -32,15 +32,15 @@ class DrinksMenu{
       if (age >= 18) {
           options.add("Gin&Tonic");
           options.add("Martini");
-          options.add("Gin&Hass");
+          options.add("Beer");
 
       } else {
           options.add("Milk");
           options.add("Juice");
-          options.add("Saftevand");
+          options.add("Lemonade");
 
       }
-      options.add("vand");
+      options.add("Water");
 
 
     /*
