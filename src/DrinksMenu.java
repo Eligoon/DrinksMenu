@@ -1,3 +1,16 @@
+
+/** Dialog til bestilling af drinks.
+ * Den viste drinksmenu tilpasses på baggrund af brugerens indtastede alder.
+ *
+ * Emner: Scanner, ArrayList,  for-each, while, Integer.parseInt
+ *
+ * Forbedringer
+ 1. Validering af at det der er blevet lagt ind i choices rent faktisk findes i menuen - som det er nu kan man skrive et hvilket som helst tal
+ 2. Refaktorering: det hele bør ikke ligge inde i main.  Vi bør refaktorere for at...
+    a. minimere gentagelser (DRY) fx. visning af lister,
+    b. kunne genbruge dialog mønsteret i et helt andet projekt, hvor det ikke nødvendigvis handler om drinks, men om en anden slags menu.
+ */
+
 package src;
 
 import java.util.ArrayList;
@@ -15,7 +28,7 @@ class DrinksMenu{
    Vi beder om brugerens alder
    */
 
-      // TODO 2: Reducer dette til én linje ved at anvende TextUI metoden promptNumeric() i stedet for
+      // TODO 2: Anvend TextUI metoden promptNumeric() i stedet for
       System.out.println("Hvor gammel er du?");//Stille brugeren et spørgsmål
       String input = scan.nextLine();          //Give brugere et sted at placere sit svar og vente på svaret
       int age = Integer.parseInt(input);       //Konvertere svaret til et tal
@@ -47,9 +60,9 @@ class DrinksMenu{
      Vi viser listen til brugeren
      */
 
-      //TODO 3: Reducer dette til en linje ved at anvende TextUI metoden displayList() i stedet for
-      for (String option : options) {
-          System.out.println(option);
+      //TODO 3: Anvend TextUI metoden displayList() i stedet for
+      for (int i = 0; i < options.size();i++) {
+          System.out.println(i+1+". "+options.get(i));
       }
 
 
@@ -59,39 +72,34 @@ class DrinksMenu{
     Hvert valg placerer vi i en liste, så vi kan udskrive bestillingen tilsidst.
     */
 
-      // TODO 4: anvend TextUI's promptNumeric metode, i stedet for disse to linjer
+      // TODO 4: Anvend TextUI metoden promptNumeric() i stedet for
       System.out.println("Hvor mange drinks vil du bestille?");  //Stille brugeren et spørgsmål
       int numberOfDrinks = Integer.parseInt(scan.nextLine());    //Give brugere et sted at placere sit svar og vente på svaret
 
 
-      //TODO 5: Reducer 6 linjer til 1 linje ved at anvende TextUI metoden promptChoice() i stedet for
-      ArrayList<String> choices = new ArrayList<String>();  //Lave en beholder til at gemme brugerens valg
+      //TODO 5:  Anvend TextUI metoden promptChoice() i stedet for
+      ArrayList<Integer> choices = new ArrayList<Integer>();  //Lave en beholder til at gemme brugerens valg
         while(choices.size() < numberOfDrinks){             //tjekke om brugeren skal vælge flere drinks
             System.out.println("Vælg en drink fra listen: ");
-       	    String choice = scan.nextLine();
+       	    int choice = scan.nextInt();
             choices.add(choice);
    		}
 
-
+      scan.nextLine();//flush
+      System.out.println("Når dine drinks er klar, vil dit navn blive råbet op.\n Indtast dit navn: ");
+      String name = scan.nextLine();
 
       /*
       Vi viser brugerens bestilling
       */
-      //TODO 6: Genbrug TextUI metoden displayList(choices) i stedet for
-   	  System.out.println("Du har bestilt flg.: ");
-      for(String choice: choices){
-        System.out.println(choice);
+      //TODO 6: Anvend  TextUI metoden displayList() i stedet for
+   	  System.out.println(name+", du har bestilt flg.: ");
+      for(int choice: choices){
+          System.out.println(choice + ". " + options.get(choice-1));
       }
 
 
-
-   /* Mulige forbedringer af denne dialog:
-    1. Valgmulighederne printes med et tal, så man bare taster et tal for en bestemt drink - hvor kan vi ændre på det og hvordan?
-    2. Validering af at det der er blevet lagt ind i choices rent faktisk findes i menuen - som det er nu kan man bestille hvad somhelst.
-    3. Refaktorering: det hele bør ikke ligge inde i main.
-       a. Vi bør refaktorere for at minimere gentagelser (DRY) fx. visning af lister,
-       b. men vi bør også refaktorere for at kunne genbruge dialog mønsteret i et helt andet projekt, hvor det ikke nødvendigvis handler om drinks, men om en anden slags menu.
-    */
+      System.out.println("Når du hører dit navn, kan du hente dine drinks i baren! ");
 
 
 
