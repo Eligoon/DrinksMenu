@@ -1,12 +1,11 @@
+/* Dialog til bestilling af drinks.
+  Den viste drinksmenu tilpasses på baggrund af brugerens indtastede alder.
 
-/** Dialog til bestilling af drinks.
- * Den viste drinksmenu tilpasses på baggrund af brugerens indtastede alder.
- *
- * Emner: Scanner, ArrayList,  for-each, while, Integer.parseInt
- *
- * Forbedringer
+  Emner: Scanner, ArrayList,  for-each, while, Integer.parseInt
+
+  Forbedringer
  1. Validering af at det der er blevet lagt ind i choices rent faktisk findes i menuen - som det er nu kan man skrive et hvilket som helst tal
- 2. Refaktorering: det hele bør ikke ligge inde i main.  Vi bør refaktorere for at...
+ 2. Refactoring: det hele bør ikke ligge inde i main. Vi bør refaktorere for at...
     a. minimere gentagelser (DRY) fx. visning af lister,
     b. kunne genbruge dialog mønsteret i et helt andet projekt, hvor det ikke nødvendigvis handler om drinks, men om en anden slags menu.
  */
@@ -21,7 +20,7 @@ class DrinksMenu{
 
   public static void main(String[] args) {
 
-      // TODO 1: Skriv en TextUI klasse og tilføj en instans af TextUI her, som til sidst skal erstatte direkte brug af Scanner objeketet i denne klasse.
+      // TODO 1: Skriv en TextUI klasse og tilføj en instans af TextUI her, som til sidst skal erstatte direkte brug af Scanner objektet i denne klasse.
       Scanner scan = new Scanner(System.in);
 
    /*
@@ -40,7 +39,7 @@ class DrinksMenu{
     */
 
 
-      ArrayList<String> options = new ArrayList<String>();
+      ArrayList<String> options = new ArrayList<>();
 
       if (age >= 18) {
           options.add("Gin&Tonic");
@@ -69,7 +68,7 @@ class DrinksMenu{
 
     /*
     Vi spørger om antal af drinks, så vi ved mange gange vi skal prompte i while loopet længere nede.
-    Hvert valg placerer vi i en liste, så vi kan udskrive bestillingen tilsidst.
+    Hvert valg placerer vi i en liste, så vi kan udskrive bestillingen til sidst.
     */
 
       // TODO 4: Anvend TextUI metoden promptNumeric() i stedet for
@@ -78,7 +77,7 @@ class DrinksMenu{
 
 
       //TODO 5:  Anvend TextUI metoden promptChoice() i stedet for
-      ArrayList<Integer> choices = new ArrayList<Integer>();  //Lave en beholder til at gemme brugerens valg
+      ArrayList<Integer> choices = new ArrayList<>();  //Lave en beholder til at gemme brugerens valg
         while(choices.size() < numberOfDrinks){             //tjekke om brugeren skal vælge flere drinks
             System.out.println("Vælg en drink fra listen: ");
        	    int choice = scan.nextInt();
