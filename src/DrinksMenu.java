@@ -84,7 +84,7 @@ class DrinksMenu{
        	    int choice = scan.nextInt();
             choices.add(choice);
    		}
-
+      //TODO 6: Anvend  TextUI metoden promptText() i stedet for
       scan.nextLine();//flush
       System.out.println("Når dine drinks er klar, vil dit navn blive råbet op.\n Indtast dit navn: ");
       String name = scan.nextLine();
@@ -92,15 +92,13 @@ class DrinksMenu{
       /*
       Vi viser brugerens bestilling
       */
-      //TODO 6: Anvend  TextUI metoden displayList() i stedet for
+      //TODO 7: Anvend  TextUI metoden displayList() i stedet for
    	  System.out.println(name+", du har bestilt flg.: ");
       for(int choice: choices){
           System.out.println(choice + ". " + options.get(choice-1));
       }
 
-
       System.out.println("Når du hører dit navn, kan du hente dine drinks i baren! ");
-
 
 
   }
