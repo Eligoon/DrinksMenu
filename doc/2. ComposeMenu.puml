@@ -7,9 +7,9 @@ DrinksMenu -> ArrayList:options = new ArrayList()
 
 alt (age < 18)
 'DrinksMenu giver options til ArrayList som skriver "Milk" på plads 0
-DrinksMenu -> ArrayList:add("Milk")
+DrinksMenu -> ArrayList:options.add("Milk")
 else (false)
-DrinksMenu -> ArrayList:add("Beer")
+DrinksMenu -> ArrayList:options.add("Beer")
 end
 
 @enduml
