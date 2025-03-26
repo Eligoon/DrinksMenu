@@ -93,8 +93,6 @@ class DrinksMenu{
        b. men vi bør også refaktorere for at kunne genbruge dialog mønsteret i et helt andet projekt, hvor det ikke nødvendigvis handler om drinks, men om en anden slags menu.
     */
 
-
-
   }
 
 }
