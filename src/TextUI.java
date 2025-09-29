@@ -16,7 +16,7 @@ class TextUI
             return Integer.parseInt(input);
         } catch (NumberFormatException e)
         {
-            System.out.println("Invalid input. Please enter a valid integer.");
+            System.out.println("Invalid input. Please enter a fitting number.");
             return promptInt(message);  // recursion
         }
     }
