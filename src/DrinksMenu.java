@@ -15,13 +15,13 @@ class DrinksMenu {
             options.add("Beer");
             options.add("Vodka");
             options.add("Wine");
-            options.add("Mohito");
+            options.add("Mojito");
         } else
             options.add("Juice");
-        options.add("Soda");
-        options.add("Milk");
-        options.add("Water");
-        options.add("Sparkling Water");
+            options.add("Soda");
+            options.add("Milk");
+            options.add("Water");
+            options.add("Sparkling Water");
 
 
         System.out.println("Available drinks:");
