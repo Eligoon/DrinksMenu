@@ -8,7 +8,8 @@ public class TextUI
 {
     private static Scanner scan = new Scanner(System.in);
 
-    public static int promptInt(String message) {
+    public static int promptInt(String message)
+    {
         System.out.print(message);
         String input = scan.nextLine();
 
