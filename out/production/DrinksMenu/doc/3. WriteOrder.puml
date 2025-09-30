@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+DrinksMenu -> TextUI: numOrders = promptNumeric("How many drinks would you like to order?")
+TextUI --> DrinksMenu: 3
+
+
+DrinksMenu -> TextUI:choices = promptChoice(options,"Choose from the list:", numOrders)
+
+TextUI -> TextUI: displayList(options,msg)
+TextUI -> ArrayList: choices = new ArrayList()
+
+loop (limit)
+TextUI -> TextUI: choice = promptText("item "+count+":")
+TextUI -> Scanner: input = nextLine()
+Scanner --> TextUI: "Milk"
+TextUI -> ArrayList: choices.add(choice)
+end
+TextUI --> DrinksMenu: choices
+DrinksMenu -> TextUI: displayList(choices)
+
+@enduml
