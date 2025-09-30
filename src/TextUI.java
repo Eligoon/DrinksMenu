@@ -1,7 +1,6 @@
 package src;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class TextUI
@@ -22,9 +21,9 @@ public class TextUI
         }
     }
 
-    public static List<String> getDrinkOptions(int age)
+    public static ArrayList<String> getDrinkOptions(int age)
     {
-        List<String> options = new ArrayList<>();
+        ArrayList<String> options = new ArrayList<>();
 
         if (age >= 18) {
             options.add("Bloody Mary");
@@ -43,7 +42,7 @@ public class TextUI
         return options;
     }
 
-    public static void displayOptions(List<String> options)
+    public static void displayOptions(ArrayList<String> options)
     {
         System.out.println("Available drinks:");
         for (int i = 0; i < options.size(); i++)
@@ -52,9 +51,9 @@ public class TextUI
         }
     }
 
-    public static List<String> getDrinkChoices(List<String> options, int numberOfDrinks)
+    public static ArrayList<String> getDrinkChoices(ArrayList<String> options, int numberOfDrinks)
     {
-        List<String> choices = new ArrayList<>();
+        ArrayList<String> choices = new ArrayList<>();
 
         while (choices.size() < numberOfDrinks)
         {
