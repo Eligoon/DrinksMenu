@@ -1,18 +1,31 @@
 package src;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class DrinksMenu
 {
     public static void main(String[] args)
     {
-        int age = TextUI.promptInt("Enter your age: ");
-        List<String> options = TextUI.getDrinkOptions(age);
+        TextUI ui = new TextUI();
 
-        TextUI.displayOptions(options);
+        System.out.println("Welcome to the Drinks Menu!");
 
-        int numberOfDrinks = TextUI.promptInt("How many drinks do you wish for: ");
-        List<String> choices = TextUI.getDrinkChoices(options, numberOfDrinks);
+        System.out.print("Enter your age: ");
+        int age = ui.promptInt();
+
+        ArrayList<String> options = ui.getDrinkOptions(age);
+
+        // Display the drinks BEFORE asking how many the user wants
+        System.out.println("Available drinks:");
+        for (int i = 0; i < options.size(); i++)
+        {
+            System.out.println((i + 1) + ") " + options.get(i));
+        }
+
+        System.out.print("How many drinks do you wish for: ");
+        int numberOfDrinks = ui.promptInt();
+
+        ArrayList<String> choices = ui.getDrinkChoices(options, numberOfDrinks);
 
         for (String choice : choices)
         {
