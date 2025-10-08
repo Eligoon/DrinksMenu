@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class TextUI
 {
+    // Instance of Scanner for reading user input
     private Scanner scan = new Scanner(System.in);
 
     // Prompts the user for a line of text and returns it.
@@ -69,6 +70,73 @@ public class TextUI
         return choice;
     }
 
+    // Asks the user to input a number with a message
+    public int promptNumeric(String msg)
+    {
+        System.out.println(msg);
+        int num = -1;
+        while (num < 0)
+        {
+            String input = scan.nextLine();
+            try
+            {
+                num = Integer.parseInt(input);
+                if (num < 0)
+                {
+                    System.out.println("Please enter a non-negative number.");
+                }
+            }
+            catch (NumberFormatException e)
+            {
+                System.out.println("Invalid input, enter a number.");
+            }
+        }
+        return num;
+    }
+
+    // Asks the user for text input and returns it
+    public String promptText(String msg)
+    {
+        System.out.println(msg);
+        return scan.nextLine();
+    }
+
+    // Displays a list of items with a header text
+    public void displayList(String header, ArrayList<String> list)
+    {
+        System.out.println(header);
+        for (int i = 0; i < list.size(); i++)
+        {
+            System.out.println((i + 1) + ") " + list.get(i));
+        }
+    }
+
+    // Asks the user to choose a specific number of drinks from the available options
+    public ArrayList<Integer> promptChoice(String msg, ArrayList<String> options, int limit)
+    {
+        System.out.println(msg);
+
+        ArrayList<Integer> choices = new ArrayList<>();
+        displayList("Drinks menu:", options);
+
+        while (choices.size() < limit)
+        {
+            int choice = promptNumeric("Choose drink " + (choices.size() + 1) + " of " + limit + ":");
+
+            if (choice >= 1 && choice <= options.size())
+            {
+                choices.add(choice - 1); // store zero-based index
+                System.out.println("You chose: " + options.get(choice - 1));
+            }
+            else
+            {
+                System.out.println("Invalid choice, try again.");
+            }
+        }
+
+        return choices;
+    }
+
     // Returns a list of drink options based on the user's age
     public ArrayList<String> getDrinkOptions(int age)
     {
@@ -94,7 +162,7 @@ public class TextUI
         return options;
     }
 
-    // Asks the user to choose a specific number of drinks from the available options
+    // Asks the user to choose a specific number of drinks from the available options (string-based version)
     public ArrayList<String> getDrinkChoices(ArrayList<String> options, int numberOfDrinks)
     {
         ArrayList<String> choices = new ArrayList<>();
